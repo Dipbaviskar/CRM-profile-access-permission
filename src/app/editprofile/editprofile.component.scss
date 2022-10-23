@@ -1,0 +1,24 @@
+*{
+    color:black;
+}
+.form-check-input[type='checkbox']:checked{
+    color: black;
+    background-color: #494949;
+}
+// .heading{
+//     background-color: #494949;
+//     color: #fff;
+// }
+
+td{
+    margin:0,40px,0,40px !important
+}
+.slider{
+    border-radius: 30px;
+  }
+  
+  .mat-slider-horizontal {
+    height: 48px;
+    min-width: 60px;
+    // color: black;
+  }

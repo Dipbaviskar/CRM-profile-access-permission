@@ -1,0 +1,18 @@
+*{
+  color: black;
+}
+.slider{
+  border-radius: 30px;
+}
+
+.mat-slider-horizontal {
+  height: 48px;
+  min-width: 60px;
+  
+}
+.mat-slider-track-background{
+  visibility: hidden;
+}
+.mat-slider.mat-accent .mat-slider-thumb{
+  background-color: black;
+}

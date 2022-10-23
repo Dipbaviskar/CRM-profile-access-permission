@@ -1,0 +1,94 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 d-flex justify-content-between">
+      <div class="pull-left">
+
+        <h3><strong>Fields</strong></h3>
+
+      </div>
+      <div class="pull-right d-flex">
+
+        <span class="mx-2" style="margin: 0 20px;"> <i class="bi bi-circle-fill mx-2"></i>Invisible</span>
+        <span class="mx-2" style="margin: 0 20px;"><i class="bi bi-circle-fill mx-2" style="color:orange"></i>Read
+          only</span>
+        <span class="mx-2" style="margin: 0 20px;"><i class="bi bi-circle-fill mx-2"
+            style="color:greenyellow"></i>Write</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<table class="table table-borderless mt-2" id="tableshow">
+  <tbody>
+    <tr>
+      <td>
+        <div style="display:inline-block">
+          <span class="border mt-5 slider me-2">
+            <mat-slider #slider min="0" max="2" step="1" value="1" (change)="updateSetting($event)"></mat-slider>
+          </span>
+
+        </div> Organization Name
+      </td>
+      <td>
+        <div style="display:inline-block">
+          <span class="border mt-5 slider me-2">
+            <mat-slider #slider min="0" max="2" step="1" value="1" (change)="updateSetting($event)"></mat-slider>
+          </span>
+        </div> Website
+      </td>
+      <td>
+        <div style="display:inline-block">
+          <span class="border mt-5 slider me-2">
+            <mat-slider #slider min="0" max="2" step="1" value="1" (change)="updateSetting($event)"></mat-slider>
+          </span>
+        </div> Primary Phone
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div style="display:inline-block">
+          <span class="border mt-5 slider me-2">
+            <mat-slider #slider min="0" max="2" step="1" value="1" (change)="updateSetting($event)"></mat-slider>
+          </span>
+        </div> Primary Email
+      </td>
+      <td>
+        <div style="display:inline-block">
+          <span class="border mt-5 slider me-2">
+            <mat-slider #slider min="0" max="2" step="1" value="1" (change)="updateSetting($event)"></mat-slider>
+          </span>
+        </div> Ownership
+      </td>
+      <td>
+        <div style="display:inline-block">
+          <span class="border mt-5 slider me-2">
+            <mat-slider #slider min="0" max="2" step="1" value="1" (change)="updateSetting($event)"></mat-slider>
+          </span>
+        </div>Member of
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div style="display:inline-block">
+          <span class="border mt-5 slider me-2">
+            <mat-slider #slider min="0" max="2" step="1" value="1" (change)="updateSetting($event)"></mat-slider>
+          </span>
+        </div> Billing Address
+      </td>
+      <td>
+        <div style="display:inline-block">
+          <span class="border mt-5 slider me-2">
+            <mat-slider #slider min="0" max="2" step="1" value="1" (change)="updateSetting($event)"></mat-slider>
+          </span>
+        </div> Billing State
+      </td>
+      <td>
+        <div style="display:inline-block">
+          <span class="border mt-5 slider me-2">
+            <mat-slider #slider min="0" max="2" step="1" value="1" (change)="updateSetting($event)"></mat-slider>
+          </span>
+        </div> Shipping City
+      </td>
+    </tr>
+  </tbody>
+</table>

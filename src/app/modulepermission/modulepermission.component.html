@@ -1,0 +1,158 @@
+<div class="container one mt-4">
+    <h1>Profile View</h1>
+    <hr>
+    <div class="d-grid justify-content-end"><button routerLink="/users">back</button></div>
+    <div class="ms-5 p-3">
+        <form (ngSubmit)="getProfilebyid()">
+
+            <label>Profile name:</label>
+            <input required name="p_name" type="text" [(ngModel)]="getDataOfprofile.p_name" class="form-control inp">
+            <br>
+
+
+            <label>Description:</label>
+            <input name="description" type="text" [(ngModel)]="getDataOfprofile.description" class="form-control inp">
+            <br>
+
+
+            <!-- <label >status:</label>
+            <input  name="status" type="text" 
+            [(ngModel)]="getDataOfprofile.status" class="form-control" > -->
+
+
+
+            <div class="container mt-4">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <table
+                            class="table table-bordered border-success text-center dt-responsive nowrap w-100 datatables">
+                            <thead>
+                                <tr>
+                                    <!-- <input type="checkbox" (change)="bulk($event)"> -->
+                                    <!-- <th>ID</th> -->
+                                    <th scope="col">
+                                        <!-- <input class="form-check-input mx-1" type="checkbox" value="" id="flexCheckDefault" [checked]="checks"> -->
+                                        Modules
+                                    </th>
+                                    <th scope="col">
+                                        View
+                                    </th>
+                                    <th scope="col">
+                                        Create
+                                    </th>
+                                    <th scope="col">
+                                        Edit
+                                    </th>
+                                    <th scope="col">
+                                        Delete
+                                    </th>
+                                    <th>Field and Tool Privileges</th>
+                                </tr>
+                            </thead>
+                            <tbody *ngFor="let row of getData; let l=index" class="table-group-divider">
+                                <tr>
+                                    <ng-container *ngIf="row.module_id==row.module_id">
+
+                                        <td>
+                                            <ng-container
+                                                *ngIf="row.view == '1' || row.create == '1' || row.edit == '1' || row.delete == '1' else templateA">
+                                                <img [src]="imgclick" alt="">
+                                            </ng-container>
+                                            <ng-template #templateA>
+                                                <img [src]="imgNotClick" alt="">
+                                            </ng-template>
+                                            {{row.module_name}}
+                                        </td>
+                                        <td>
+                                            <ng-container *ngIf="row.view == '1'; else templateA">
+                                                <img [src]="imgclick" alt="">
+                                            </ng-container>
+                                            <ng-template #templateA>
+                                                <img [src]="imgNotClick" alt="">
+                                            </ng-template>
+
+                                        </td>
+                                        <td>
+                                            <ng-container *ngIf="row.create == '1'; else templateA">
+                                                <img [src]="imgclick" alt="">
+                                            </ng-container>
+                                            <ng-template #templateA>
+                                                <img [src]="imgNotClick" alt="">
+                                            </ng-template>
+                                        </td>
+                                        <td>
+                                            <ng-container *ngIf="row.edit == '1'; else templateA">
+                                                <img [src]="imgclick" alt="">
+                                            </ng-container>
+                                            <ng-template #templateA>
+                                                <img [src]="imgNotClick" alt="">
+                                            </ng-template>
+                                        </td>
+                                        <td>
+                                            <ng-container *ngIf="row.delete == '1'; else templateA">
+                                                <img [src]="imgclick" alt="">
+                                            </ng-container>
+                                            <ng-template #templateA>
+                                                <img [src]="imgNotClick" alt="">
+                                            </ng-template>
+                                        </td>
+                                        <td>
+                                            <ng-container *ngIf="rowindex == l+1; else templateb">
+                                                <button *ngIf="down" (click)="toggleOn(l+1)">
+                                                    <i class="bi bi-chevron-down"></i></button>
+                                                <button *ngIf="up" (click)="toggleOff(l)"> <i
+                                                        class="bi bi-chevron-up"></i>
+
+                                                </button>
+                                            </ng-container>
+
+                                            <ng-template #templateb>
+                                                <button (click)="toggleOn(l+1)">
+                                                    <i class="bi bi-chevron-down"></i>
+                                                </button>
+                                            </ng-template>
+
+                                        </td>
+                                    </ng-container>
+                                </tr>
+
+                                <tr>
+                                    <td colspan="6" *ngIf="rowindex==l+1">
+                                        <ng-container *ngIf="row.module_id==l+1">
+                                            <app-fieldpermission></app-fieldpermission>
+                                        </ng-container>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<!-- <ng-container *ngIf="row.module_id == '1'; else templateb">
+                                            <button (click)="show(row.module_id)"(click)="getIndex(l)"  >
+                                                <i
+                                                    class="bi bi-chevron-down" *ngIf="down"></i>
+                                                    <i
+                                                     class="bi bi-chevron-up" *ngIf="up"></i> 
+                                                     
+                                            </button>
+                                        </ng-container>
+                                        
+                                        <ng-template #templateb>
+                                            <button>
+                                                <i
+                                                class="bi bi-chevron-down"></i>
+                                                
+                                            </button>
+                                        </ng-template> -->
+
+
+<!-- <button (click)="fun()"(click)="getIndex(l)">
+                                            <i class="bi bi-chevron-down" *ngIf="show"></i>
+                                                <i class="bi bi-chevron-up" *ngIf="hide"></i>       
+                                        </button> -->
